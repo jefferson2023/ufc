@@ -8,6 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Flag Icons CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css" />
     <script>
         tailwind.config = {
             theme: {
@@ -36,10 +38,6 @@
             font-family: 'Oswald', sans-serif;
         }
 
-        .gold-border {
-            border-color: #d4af37;
-        }
-        
         .red-gradient {
             background: linear-gradient(180deg, rgba(210, 10, 10, 0.2) 0%, rgba(26, 26, 26, 1) 100%);
         }
@@ -57,7 +55,7 @@
             
             <!-- Barra de Busca -->
             <div class="relative w-full sm:w-64">
-                <input type="text" id="searchInput" onkeyup="filterFights()" placeholder="Buscar lutador ou evento..." 
+                <input type="text" id="searchInput" onkeyup="filterFights()" placeholder="Buscar lutador ou país..." 
                        class="w-full bg-ufcCard border border-gray-700 rounded-full py-2 px-4 pl-10 text-sm text-gray-200 focus:outline-none focus:border-ufcRed transition">
                 <i class="fas fa-search absolute left-3.5 top-2.5 text-gray-400 text-sm"></i>
             </div>
@@ -71,25 +69,25 @@
                 Próximo Evento Em Destaque
             </div>
             <h1 class="font-oswald text-4xl md:text-6xl font-bold tracking-tight text-white uppercase">
-                UFC 300: Pereira vs Adesanya
+                UFC Fight Night: Rosas Jr. vs Barcelos
             </h1>
             
             <div class="flex flex-wrap justify-center items-center gap-6 text-gray-300 text-sm md:text-base font-medium">
                 <div class="flex items-center gap-2">
                     <i class="far fa-calendar-alt text-ufcRed"></i>
-                    <span>Sábado, 13 de Abril</span>
+                    <span>Sábado, 26 de Setembro</span>
                 </div>
                 <div class="flex items-center gap-2">
                     <i class="far fa-clock text-ufcRed"></i>
-                    <span>Início: 19:00 (Brasília)</span>
+                    <span>Preliminares: 18:00 | Principal: 21:00</span>
                 </div>
                 <div class="flex items-center gap-2">
                     <i class="fas fa-map-marker-alt text-ufcRed"></i>
-                    <span>T-Mobile Arena, Las Vegas</span>
+                    <span>UFC APEX, Las Vegas, EUA</span>
                 </div>
             </div>
 
-            <!-- Contagem Regressiva Simples -->
+            <!-- Contagem Regressiva -->
             <div class="flex justify-center gap-4 pt-4 text-center">
                 <div class="bg-black/60 border border-gray-800 p-3 rounded-lg min-w-[70px]">
                     <span id="days" class="font-oswald text-2xl font-bold text-ufcGold">00</span>
@@ -115,232 +113,268 @@
             <button onclick="switchTab('all')" id="tab-all" class="tab-btn px-6 py-3 font-oswald text-lg font-bold border-b-2 border-ufcRed text-white focus:outline-none transition">
                 TODAS AS LUTAS
             </button>
-            <button onclick="switchTab('main')" id="tab-main" class="tab-btn px-6 py-3 font-oswald text-lg font-bold border-b-2 border-transparent text-gray-400 hover:text-gray-200 focus:outline-none transition">
-                CARD PRINCIPAL (23:00)
-            </button>
             <button onclick="switchTab('prelim')" id="tab-prelim" class="tab-btn px-6 py-3 font-oswald text-lg font-bold border-b-2 border-transparent text-gray-400 hover:text-gray-200 focus:outline-none transition">
-                PRELIMINARES (19:00)
+                PRELIMINARES (18:00)
+            </button>
+            <button onclick="switchTab('main')" id="tab-main" class="tab-btn px-6 py-3 font-oswald text-lg font-bold border-b-2 border-transparent text-gray-400 hover:text-gray-200 focus:outline-none transition">
+                CARD PRINCIPAL (21:00)
             </button>
         </div>
 
         <!-- Lista de Lutas -->
         <div id="fightsContainer" class="space-y-6">
 
-            <!-- Card Principal - Titulo Separador -->
-            <div class="section-title main-card-header flex items-center gap-3 border-l-4 border-ufcGold pl-3">
-                <h2 class="font-oswald text-2xl font-bold uppercase tracking-wide text-ufcGold">Card Principal</h2>
-                <span class="text-xs bg-ufcGold/10 text-ufcGold px-2 py-0.5 rounded border border-ufcGold/30">Transmissão: 23:00 BRT</span>
+            <!-- ================= === CARD PRELIMINAR (PRIMEIRO) ==================== -->
+            <div class="section-title prelim-card-header flex items-center gap-3 border-l-4 border-ufcRed pl-3">
+                <h2 class="font-oswald text-2xl font-bold uppercase tracking-wide text-white">Lutas Preliminares</h2>
+                <span class="text-xs bg-ufcRed/20 text-ufcRed px-2 py-0.5 rounded border border-ufcRed/30">Início: 18:00 BRT</span>
             </div>
 
-            <!-- Luta 1 (Cinturão / Destaque) -->
-            <div class="fight-card main-card bg-ufcCard hover:bg-ufcCardHover border-l-4 border-ufcRed rounded-lg p-5 transition duration-200 shadow-md">
+            <!-- Preliminar 1: Norma Dumont vs Ailín Pérez -->
+            <div class="fight-card prelim-card bg-ufcCard hover:bg-ufcCardHover rounded-lg p-5 transition duration-200 shadow-md">
                 <div class="flex justify-between items-center text-xs text-gray-400 uppercase mb-3 font-semibold border-b border-gray-800 pb-2">
-                    <span class="text-ufcGold"><i class="fas fa-crown text-ufcGold mr-1"></i> Disputa do Cinturão Peso Meio-Pesado</span>
-                    <span>5 Rounds</span>
+                    <span>Peso Galo Feminino</span>
+                    <span>3 Rounds</span>
                 </div>
-                
                 <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
-                    <!-- Lutador 1 -->
-                    <div class="md:col-span-2 flex items-center justify-between md:justify-start space-x-3 text-left">
+                    <div class="md:col-span-2 flex items-center justify-between md:justify-start space-x-3">
                         <div class="flex items-center space-x-3">
-                            <span class="text-2xl" title="Brasil">🇧🇷</span>
+                            <span class="fi fi-br text-2xl rounded shadow"></span>
                             <div>
-                                <h3 class="font-oswald text-xl font-bold text-white uppercase tracking-wide">Alex Pereira</h3>
-                                <p class="text-xs text-gray-400">"Poatan" • Brasil</p>
+                                <h3 class="font-oswald text-xl font-bold text-white uppercase tracking-wide">Norma Dumont</h3>
+                                <p class="text-xs text-gray-400">Brasil</p>
                             </div>
                         </div>
-                        <span class="bg-red-900/40 text-red-400 text-xs font-bold px-2 py-1 rounded">Canto Vermelho</span>
                     </div>
+                    <div class="md:col-span-1 text-center py-2 md:py-0 border-y md:border-y-0 md:border-x border-gray-800">
+                        <span class="font-oswald text-2xl font-bold text-ufcRed block">VS</span>
+                        <span class="text-[10px] text-gray-400 block uppercase tracking-wider">Peso Galo</span>
+                    </div>
+                    <div class="md:col-span-2 flex items-center justify-between md:justify-end space-x-3 text-right">
+                        <div class="order-2">
+                            <h3 class="font-oswald text-xl font-bold text-white uppercase tracking-wide">Ailín Pérez</h3>
+                            <p class="text-xs text-gray-400">Argentina</p>
+                        </div>
+                        <span class="fi fi-ar text-2xl rounded shadow order-3"></span>
+                    </div>
+                </div>
+            </div>
 
-                    <!-- VS / Info Central -->
+            <!-- Preliminar 2: Elves Brener vs Josiah Harrell -->
+            <div class="fight-card prelim-card bg-ufcCard hover:bg-ufcCardHover rounded-lg p-5 transition duration-200 shadow-md">
+                <div class="flex justify-between items-center text-xs text-gray-400 uppercase mb-3 font-semibold border-b border-gray-800 pb-2">
+                    <span>Peso Leve</span>
+                    <span>3 Rounds</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
+                    <div class="md:col-span-2 flex items-center justify-between md:justify-start space-x-3">
+                        <div class="flex items-center space-x-3">
+                            <span class="fi fi-br text-2xl rounded shadow"></span>
+                            <div>
+                                <h3 class="font-oswald text-xl font-bold text-white uppercase tracking-wide">Elves Brener</h3>
+                                <p class="text-xs text-gray-400">Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:col-span-1 text-center py-2 md:py-0 border-y md:border-y-0 md:border-x border-gray-800">
+                        <span class="font-oswald text-2xl font-bold text-ufcRed block">VS</span>
+                        <span class="text-[10px] text-gray-400 block uppercase tracking-wider">Peso Leve</span>
+                    </div>
+                    <div class="md:col-span-2 flex items-center justify-between md:justify-end space-x-3 text-right">
+                        <div class="order-2">
+                            <h3 class="font-oswald text-xl font-bold text-white uppercase tracking-wide">Josiah Harrell</h3>
+                            <p class="text-xs text-gray-400">EUA</p>
+                        </div>
+                        <span class="fi fi-us text-2xl rounded shadow order-3"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preliminar 3: Rodolfo Bellato vs Christian Edwards -->
+            <div class="fight-card prelim-card bg-ufcCard hover:bg-ufcCardHover rounded-lg p-5 transition duration-200 shadow-md">
+                <div class="flex justify-between items-center text-xs text-gray-400 uppercase mb-3 font-semibold border-b border-gray-800 pb-2">
+                    <span>Peso Meio-Pesado</span>
+                    <span>3 Rounds</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
+                    <div class="md:col-span-2 flex items-center justify-between md:justify-start space-x-3">
+                        <div class="flex items-center space-x-3">
+                            <span class="fi fi-br text-2xl rounded shadow"></span>
+                            <div>
+                                <h3 class="font-oswald text-xl font-bold text-white uppercase tracking-wide">Rodolfo Bellato</h3>
+                                <p class="text-xs text-gray-400">Brasil</p>
+                            </div>
+                        </div>
+                    </div>
                     <div class="md:col-span-1 text-center py-2 md:py-0 border-y md:border-y-0 md:border-x border-gray-800">
                         <span class="font-oswald text-2xl font-bold text-ufcRed block">VS</span>
                         <span class="text-[10px] text-gray-400 block uppercase tracking-wider">Peso Meio-Pesado</span>
                     </div>
-
-                    <!-- Lutador 2 -->
-                    <div class="md:col-span-2 flex items-center justify-between md:justify-end space-x-3 text-right">
-                        <span class="bg-blue-900/40 text-blue-400 text-xs font-bold px-2 py-1 rounded order-1 md:order-1">Canto Azul</span>
-                        <div class="order-2 md:order-2">
-                            <h3 class="font-oswald text-xl font-bold text-white uppercase tracking-wide">Israel Adesanya</h3>
-                            <p class="text-xs text-gray-400">"The Last Stylebender" • Nigéria</p>
-                        </div>
-                        <span class="text-2xl order-3 md:order-3" title="Nigéria">🇳🇬</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Luta 2 -->
-            <div class="fight-card main-card bg-ufcCard hover:bg-ufcCardHover rounded-lg p-5 transition duration-200 shadow-md">
-                <div class="flex justify-between items-center text-xs text-gray-400 uppercase mb-3 font-semibold border-b border-gray-800 pb-2">
-                    <span>Luta Co-Principal • Peso Leve</span>
-                    <span>3 Rounds</span>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
-                    <!-- Lutador 1 -->
-                    <div class="md:col-span-2 flex items-center justify-between md:justify-start space-x-3 text-left">
-                        <div class="flex items-center space-x-3">
-                            <span class="text-2xl" title="Brasil">🇧🇷</span>
-                            <div>
-                                <h3 class="font-oswald text-xl font-bold text-white uppercase tracking-wide">Charles Oliveira</h3>
-                                <p class="text-xs text-gray-400">"Do Bronx" • Brasil</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- VS -->
-                    <div class="md:col-span-1 text-center py-2 md:py-0 border-y md:border-y-0 md:border-x border-gray-800">
-                        <span class="font-oswald text-2xl font-bold text-ufcRed block">VS</span>
-                        <span class="text-[10px] text-gray-400 block uppercase tracking-wider">Peso Leve</span>
-                    </div>
-
-                    <!-- Lutador 2 -->
-                    <div class="md:col-span-2 flex items-center justify-between md:justify-end space-x-3 text-right">
-                        <div class="order-2 md:order-2">
-                            <h3 class="font-oswald text-xl font-bold text-white uppercase tracking-wide">Arman Tsarukyan</h3>
-                            <p class="text-xs text-gray-400">Armênia / Rússia</p>
-                        </div>
-                        <span class="text-2xl order-3 md:order-3" title="Armênia">🇦🇲</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Luta 3 -->
-            <div class="fight-card main-card bg-ufcCard hover:bg-ufcCardHover rounded-lg p-5 transition duration-200 shadow-md">
-                <div class="flex justify-between items-center text-xs text-gray-400 uppercase mb-3 font-semibold border-b border-gray-800 pb-2">
-                    <span>Peso Welter</span>
-                    <span>3 Rounds</span>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
-                    <div class="md:col-span-2 flex items-center justify-between md:justify-start space-x-3">
-                        <div class="flex items-center space-x-3">
-                            <span class="text-2xl" title="EUA">🇺🇸</span>
-                            <div>
-                                <h3 class="font-oswald text-xl font-bold text-white uppercase tracking-wide">Justin Gaethje</h3>
-                                <p class="text-xs text-gray-400">"The Highlight" • EUA</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="md:col-span-1 text-center py-2 md:py-0 border-y md:border-y-0 md:border-x border-gray-800">
-                        <span class="font-oswald text-2xl font-bold text-ufcRed block">VS</span>
-                        <span class="text-[10px] text-gray-400 block uppercase tracking-wider">Peso Leve</span>
-                    </div>
-
                     <div class="md:col-span-2 flex items-center justify-between md:justify-end space-x-3 text-right">
                         <div class="order-2">
-                            <h3 class="font-oswald text-xl font-bold text-white uppercase tracking-wide">Max Holloway</h3>
-                            <p class="text-xs text-gray-400">"Blessed" • EUA</p>
-                        </div>
-                        <span class="text-2xl order-3" title="EUA">🇺🇸</span>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Card Preliminar - Titulo Separador -->
-            <div class="section-title prelim-card-header flex items-center gap-3 border-l-4 border-ufcRed pl-3 pt-6">
-                <h2 class="font-oswald text-2xl font-bold uppercase tracking-wide text-white">Lutas Preliminares</h2>
-                <span class="text-xs bg-ufcRed/20 text-ufcRed px-2 py-0.5 rounded border border-ufcRed/30">Transmissão: 19:00 BRT</span>
-            </div>
-
-            <!-- Luta Preliminar 1 -->
-            <div class="fight-card prelim-card bg-ufcCard hover:bg-ufcCardHover rounded-lg p-5 transition duration-200 shadow-md">
-                <div class="flex justify-between items-center text-xs text-gray-400 uppercase mb-3 font-semibold border-b border-gray-800 pb-2">
-                    <span>Peso Meio-Médio</span>
-                    <span>3 Rounds</span>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
-                    <div class="md:col-span-2 flex items-center justify-between md:justify-start space-x-3">
-                        <div class="flex items-center space-x-3">
-                            <span class="text-2xl" title="Brasil">🇧🇷</span>
-                            <div>
-                                <h3 class="font-oswald text-xl font-bold text-white uppercase tracking-wide">Gilbert Burns</h3>
-                                <p class="text-xs text-gray-400">"Durinho" • Brasil</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="md:col-span-1 text-center py-2 md:py-0 border-y md:border-y-0 md:border-x border-gray-800">
-                        <span class="font-oswald text-2xl font-bold text-ufcRed block">VS</span>
-                        <span class="text-[10px] text-gray-400 block uppercase tracking-wider">Peso Meio-Médio</span>
-                    </div>
-
-                    <div class="md:col-span-2 flex items-center justify-between md:justify-end space-x-3 text-right">
-                        <div class="order-2">
-                            <h3 class="font-oswald text-xl font-bold text-white uppercase tracking-wide">Jack Della Maddalena</h3>
-                            <p class="text-xs text-gray-400">Austrália</p>
-                        </div>
-                        <span class="text-2xl order-3" title="Austrália">🇦🇺</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Luta Preliminar 2 -->
-            <div class="fight-card prelim-card bg-ufcCard hover:bg-ufcCardHover rounded-lg p-5 transition duration-200 shadow-md">
-                <div class="flex justify-between items-center text-xs text-gray-400 uppercase mb-3 font-semibold border-b border-gray-800 pb-2">
-                    <span>Peso Pena Feminino</span>
-                    <span>3 Rounds</span>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
-                    <div class="md:col-span-2 flex items-center justify-between md:justify-start space-x-3">
-                        <div class="flex items-center space-x-3">
-                            <span class="text-2xl" title="EUA">🇺🇸</span>
-                            <div>
-                                <h3 class="font-oswald text-xl font-bold text-white uppercase tracking-wide">Holly Holm</h3>
-                                <p class="text-xs text-gray-400">"The Preacher's Daughter" • EUA</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="md:col-span-1 text-center py-2 md:py-0 border-y md:border-y-0 md:border-x border-gray-800">
-                        <span class="font-oswald text-2xl font-bold text-ufcRed block">VS</span>
-                        <span class="text-[10px] text-gray-400 block uppercase tracking-wider">Peso Galo Feminino</span>
-                    </div>
-
-                    <div class="md:col-span-2 flex items-center justify-between md:justify-end space-x-3 text-right">
-                        <div class="order-2">
-                            <h3 class="font-oswald text-xl font-bold text-white uppercase tracking-wide">Kayla Harrison</h3>
+                            <h3 class="font-oswald text-xl font-bold text-white uppercase tracking-wide">Christian Edwards</h3>
                             <p class="text-xs text-gray-400">EUA</p>
                         </div>
-                        <span class="text-2xl order-3" title="EUA">🇺🇸</span>
+                        <span class="fi fi-us text-2xl rounded shadow order-3"></span>
                     </div>
                 </div>
             </div>
 
-            <!-- Luta Preliminar 3 -->
+            <!-- Preliminar 4: Montel Jackson vs Ricky Simón -->
             <div class="fight-card prelim-card bg-ufcCard hover:bg-ufcCardHover rounded-lg p-5 transition duration-200 shadow-md">
                 <div class="flex justify-between items-center text-xs text-gray-400 uppercase mb-3 font-semibold border-b border-gray-800 pb-2">
-                    <span>Peso Médio</span>
+                    <span>Peso Galo</span>
                     <span>3 Rounds</span>
                 </div>
-                
                 <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
                     <div class="md:col-span-2 flex items-center justify-between md:justify-start space-x-3">
                         <div class="flex items-center space-x-3">
-                            <span class="text-2xl" title="EUA">🇺🇸</span>
+                            <span class="fi fi-us text-2xl rounded shadow"></span>
                             <div>
-                                <h3 class="font-oswald text-xl font-bold text-white uppercase tracking-wide">Bo Nickal</h3>
+                                <h3 class="font-oswald text-xl font-bold text-white uppercase tracking-wide">Montel Jackson</h3>
                                 <p class="text-xs text-gray-400">EUA</p>
                             </div>
                         </div>
                     </div>
+                    <div class="md:col-span-1 text-center py-2 md:py-0 border-y md:border-y-0 md:border-x border-gray-800">
+                        <span class="font-oswald text-2xl font-bold text-ufcRed block">VS</span>
+                        <span class="text-[10px] text-gray-400 block uppercase tracking-wider">Peso Galo</span>
+                    </div>
+                    <div class="md:col-span-2 flex items-center justify-between md:justify-end space-x-3 text-right">
+                        <div class="order-2">
+                            <h3 class="font-oswald text-xl font-bold text-white uppercase tracking-wide">Ricky Simón</h3>
+                            <p class="text-xs text-gray-400">EUA</p>
+                        </div>
+                        <span class="fi fi-us text-2xl rounded shadow order-3"></span>
+                    </div>
+                </div>
+            </div>
 
+
+            <!-- ================= === CARD PRINCIPAL (EM BAIXO) ==================== -->
+            <div class="section-title main-card-header flex items-center gap-3 border-l-4 border-ufcGold pl-3 pt-6">
+                <h2 class="font-oswald text-2xl font-bold uppercase tracking-wide text-ufcGold">Card Principal</h2>
+                <span class="text-xs bg-ufcGold/10 text-ufcGold px-2 py-0.5 rounded border border-ufcGold/30">Início: 21:00 BRT</span>
+            </div>
+
+            <!-- Luta Principal: Raúl Rosas Jr. vs Raoni Barcelos -->
+            <div class="fight-card main-card bg-ufcCard hover:bg-ufcCardHover border-l-4 border-ufcRed rounded-lg p-5 transition duration-200 shadow-md">
+                <div class="flex justify-between items-center text-xs text-gray-400 uppercase mb-3 font-semibold border-b border-gray-800 pb-2">
+                    <span class="text-ufcGold"><i class="fas fa-star text-ufcGold mr-1"></i> Luta Principal • Peso Galo</span>
+                    <span>3 Rounds</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
+                    <div class="md:col-span-2 flex items-center justify-between md:justify-start space-x-3">
+                        <div class="flex items-center space-x-3">
+                            <span class="fi fi-mx text-2xl rounded shadow"></span>
+                            <div>
+                                <h3 class="font-oswald text-xl font-bold text-white uppercase tracking-wide">Raúl Rosas Jr.</h3>
+                                <p class="text-xs text-gray-400">"El Niño Problema" • México</p>
+                            </div>
+                        </div>
+                        <span class="bg-red-900/40 text-red-400 text-xs font-bold px-2 py-1 rounded">Canto Vermelho</span>
+                    </div>
+                    <div class="md:col-span-1 text-center py-2 md:py-0 border-y md:border-y-0 md:border-x border-gray-800">
+                        <span class="font-oswald text-2xl font-bold text-ufcRed block">VS</span>
+                        <span class="text-[10px] text-gray-400 block uppercase tracking-wider">Peso Galo</span>
+                    </div>
+                    <div class="md:col-span-2 flex items-center justify-between md:justify-end space-x-3 text-right">
+                        <span class="bg-blue-900/40 text-blue-400 text-xs font-bold px-2 py-1 rounded order-1">Canto Azul</span>
+                        <div class="order-2">
+                            <h3 class="font-oswald text-xl font-bold text-white uppercase tracking-wide">Raoni Barcelos</h3>
+                            <p class="text-xs text-gray-400">Brasil</p>
+                        </div>
+                        <span class="fi fi-br text-2xl rounded shadow order-3"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Principal 2: Rodolfo Vieira vs Robert Bryczek -->
+            <div class="fight-card main-card bg-ufcCard hover:bg-ufcCardHover rounded-lg p-5 transition duration-200 shadow-md">
+                <div class="flex justify-between items-center text-xs text-gray-400 uppercase mb-3 font-semibold border-b border-gray-800 pb-2">
+                    <span>Co-Principal • Peso Médio</span>
+                    <span>3 Rounds</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
+                    <div class="md:col-span-2 flex items-center justify-between md:justify-start space-x-3">
+                        <div class="flex items-center space-x-3">
+                            <span class="fi fi-br text-2xl rounded shadow"></span>
+                            <div>
+                                <h3 class="font-oswald text-xl font-bold text-white uppercase tracking-wide">Rodolfo Vieira</h3>
+                                <p class="text-xs text-gray-400">"Caçador de Faixas Pretas" • Brasil</p>
+                            </div>
+                        </div>
+                    </div>
                     <div class="md:col-span-1 text-center py-2 md:py-0 border-y md:border-y-0 md:border-x border-gray-800">
                         <span class="font-oswald text-2xl font-bold text-ufcRed block">VS</span>
                         <span class="text-[10px] text-gray-400 block uppercase tracking-wider">Peso Médio</span>
                     </div>
-
                     <div class="md:col-span-2 flex items-center justify-between md:justify-end space-x-3 text-right">
                         <div class="order-2">
-                            <h3 class="font-oswald text-xl font-bold text-white uppercase tracking-wide">Cody Brundage</h3>
+                            <h3 class="font-oswald text-xl font-bold text-white uppercase tracking-wide">Robert Bryczek</h3>
+                            <p class="text-xs text-gray-400">Polónia</p>
+                        </div>
+                        <span class="fi fi-pl text-2xl rounded shadow order-3"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Principal 3: Valesca Machado vs Melissa Amaya -->
+            <div class="fight-card main-card bg-ufcCard hover:bg-ufcCardHover rounded-lg p-5 transition duration-200 shadow-md">
+                <div class="flex justify-between items-center text-xs text-gray-400 uppercase mb-3 font-semibold border-b border-gray-800 pb-2">
+                    <span>Peso Palha Feminino</span>
+                    <span>3 Rounds</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
+                    <div class="md:col-span-2 flex items-center justify-between md:justify-start space-x-3">
+                        <div class="flex items-center space-x-3">
+                            <span class="fi fi-br text-2xl rounded shadow"></span>
+                            <div>
+                                <h3 class="font-oswald text-xl font-bold text-white uppercase tracking-wide">Valesca Machado</h3>
+                                <p class="text-xs text-gray-400">"Tina" • Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:col-span-1 text-center py-2 md:py-0 border-y md:border-y-0 md:border-x border-gray-800">
+                        <span class="font-oswald text-2xl font-bold text-ufcRed block">VS</span>
+                        <span class="text-[10px] text-gray-400 block uppercase tracking-wider">Peso Palha</span>
+                    </div>
+                    <div class="md:col-span-2 flex items-center justify-between md:justify-end space-x-3 text-right">
+                        <div class="order-2">
+                            <h3 class="font-oswald text-xl font-bold text-white uppercase tracking-wide">Melissa Amaya</h3>
                             <p class="text-xs text-gray-400">EUA</p>
                         </div>
-                        <span class="text-2xl order-3" title="EUA">🇺🇸</span>
+                        <span class="fi fi-us text-2xl rounded shadow order-3"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Principal 4: Brady Hiestand vs Rinya Nakamura -->
+            <div class="fight-card main-card bg-ufcCard hover:bg-ufcCardHover rounded-lg p-5 transition duration-200 shadow-md">
+                <div class="flex justify-between items-center text-xs text-gray-400 uppercase mb-3 font-semibold border-b border-gray-800 pb-2">
+                    <span>Peso Galo</span>
+                    <span>3 Rounds</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
+                    <div class="md:col-span-2 flex items-center justify-between md:justify-start space-x-3">
+                        <div class="flex items-center space-x-3">
+                            <span class="fi fi-us text-2xl rounded shadow"></span>
+                            <div>
+                                <h3 class="font-oswald text-xl font-bold text-white uppercase tracking-wide">Brady Hiestand</h3>
+                                <p class="text-xs text-gray-400">EUA</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:col-span-1 text-center py-2 md:py-0 border-y md:border-y-0 md:border-x border-gray-800">
+                        <span class="font-oswald text-2xl font-bold text-ufcRed block">VS</span>
+                        <span class="text-[10px] text-gray-400 block uppercase tracking-wider">Peso Galo</span>
+                    </div>
+                    <div class="md:col-span-2 flex items-center justify-between md:justify-end space-x-3 text-right">
+                        <div class="order-2">
+                            <h3 class="font-oswald text-xl font-bold text-white uppercase tracking-wide">Rinya Nakamura</h3>
+                            <p class="text-xs text-gray-400">Japão</p>
+                        </div>
+                        <span class="fi fi-jp text-2xl rounded shadow order-3"></span>
                     </div>
                 </div>
             </div>
@@ -354,9 +388,8 @@
         <p class="mt-1">Programação sujeita a alterações sem aviso prévio.</p>
     </footer>
 
-    <!-- Script para Abas, Busca e Timer -->
+    <!-- Scripts -->
     <script>
-        // Função para alternar entre as abas (Todas, Principal, Preliminar)
         function switchTab(type) {
             const tabs = document.querySelectorAll('.tab-btn');
             tabs.forEach(tab => {
@@ -383,17 +416,16 @@
             } else if (type === 'main') {
                 mainFights.forEach(f => f.style.display = 'block');
                 prelimFights.forEach(f => f.style.display = 'none');
-                if(mainHeader) mainHeader.style.display = 'flex';
-                if(prelimHeader) prelimHeader.style.display = 'none';
+                if(mainHeader) mainHeader.style.display = 'none';
+                if(prelimHeader) prelimHeader.style.display = 'flex';
             } else if (type === 'prelim') {
                 mainFights.forEach(f => f.style.display = 'none');
                 prelimFights.forEach(f => f.style.display = 'block');
-                if(mainHeader) mainHeader.style.display = 'none';
-                if(prelimHeader) prelimHeader.style.display = 'flex';
+                if(mainHeader) mainHeader.style.display = 'flex';
+                if(prelimHeader) prelimHeader.style.display = 'none';
             }
         }
 
-        // Função de busca por nome ou país
         function filterFights() {
             const input = document.getElementById('searchInput').value.toLowerCase();
             const fightCards = document.querySelectorAll('.fight-card');
@@ -415,13 +447,19 @@
             });
         }
 
-        // Timer de Contagem Regressiva
-        const eventDate = new Date();
-        eventDate.setDate(eventDate.getDate() + 5);
+        // Timer ajustado para o evento de 26/09/2026
+        const eventDate = new Date('2026-09-26T18:00:00');
 
         function updateTimer() {
             const now = new Date().getTime();
             const distance = eventDate - now;
+
+            if (distance < 0) {
+                document.getElementById('days').innerText = '00';
+                document.getElementById('hours').innerText = '00';
+                document.getElementById('minutes').innerText = '00';
+                return;
+            }
 
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
