@@ -62,8 +62,8 @@
     </header>
 
     <!-- Banner Principal do Evento -->
-    <section class="relative bg-cover bg-center py-4 sm:py-6 px-4 red-gradient border-b border-gray-800">
-        <div class="max-w-5xl mx-auto text-center space-y-3">
+    <section class="relative bg-cover bg-center py-3 sm:py-4 px-4 red-gradient border-b border-gray-800">
+        <div class="max-w-5xl mx-auto text-center space-y-2">
             <h1 class="font-oswald text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white uppercase">
                 UFC Fight Night: Rosas Jr. vs Barcelos
             </h1>
@@ -76,26 +76,6 @@
                 <div class="flex items-center gap-1.5">
                     <i class="far fa-clock text-ufcRed"></i>
                     <span>Preliminares: 18:00 | Principal: 21:00</span>
-                </div>
-                <div class="flex items-center gap-1.5">
-                    <i class="fas fa-map-marker-alt text-ufcRed"></i>
-                    <span>UFC APEX, Las Vegas, EUA</span>
-                </div>
-            </div>
-
-            <!-- Contagem Regressiva -->
-            <div class="flex justify-center gap-2 sm:gap-4 pt-2 text-center">
-                <div class="bg-black/60 border border-gray-800 p-2 sm:p-3 rounded-lg min-w-[60px] sm:min-w-[70px]">
-                    <span id="days" class="font-oswald text-xl sm:text-2xl font-bold text-ufcGold">00</span>
-                    <p class="text-[9px] sm:text-[10px] text-gray-400 uppercase">Dias</p>
-                </div>
-                <div class="bg-black/60 border border-gray-800 p-2 sm:p-3 rounded-lg min-w-[60px] sm:min-w-[70px]">
-                    <span id="hours" class="font-oswald text-xl sm:text-2xl font-bold text-ufcGold">00</span>
-                    <p class="text-[9px] sm:text-[10px] text-gray-400 uppercase">Horas</p>
-                </div>
-                <div class="bg-black/60 border border-gray-800 p-2 sm:p-3 rounded-lg min-w-[60px] sm:min-w-[70px]">
-                    <span id="minutes" class="font-oswald text-xl sm:text-2xl font-bold text-ufcGold">00</span>
-                    <p class="text-[9px] sm:text-[10px] text-gray-400 uppercase">Minutos</p>
                 </div>
             </div>
         </div>
@@ -502,31 +482,6 @@
                 }
             });
         }
-
-        const eventDate = new Date('2026-09-26T18:00:00');
-
-        function updateTimer() {
-            const now = new Date().getTime();
-            const distance = eventDate - now;
-
-            if (distance < 0) {
-                document.getElementById('days').innerText = '00';
-                document.getElementById('hours').innerText = '00';
-                document.getElementById('minutes').innerText = '00';
-                return;
-            }
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-            document.getElementById('days').innerText = days < 10 ? '0' + days : days;
-            document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
-            document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
-        }
-
-        setInterval(updateTimer, 1000);
-        updateTimer();
     </script>
 </body>
 </html>
