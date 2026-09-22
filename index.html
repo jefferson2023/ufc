@@ -416,13 +416,13 @@
             } else if (type === 'main') {
                 mainFights.forEach(f => f.style.display = 'block');
                 prelimFights.forEach(f => f.style.display = 'none');
-                if(mainHeader) mainHeader.style.display = 'none';
-                if(prelimHeader) prelimHeader.style.display = 'flex';
+                if(mainHeader) mainHeader.style.display = 'flex';
+                if(prelimHeader) prelimHeader.style.display = 'none';
             } else if (type === 'prelim') {
                 mainFights.forEach(f => f.style.display = 'none');
                 prelimFights.forEach(f => f.style.display = 'block');
-                if(mainHeader) mainHeader.style.display = 'flex';
-                if(prelimHeader) prelimHeader.style.display = 'none';
+                if(mainHeader) mainHeader.style.display = 'none';
+                if(prelimHeader) prelimHeader.style.display = 'flex';
             }
         }
 
