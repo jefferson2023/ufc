@@ -42,31 +42,175 @@
         <div class="max-w-md mx-auto">
             <span class="bg-ufcRed text-white text-[10px] font-oswald tracking-widest px-2.5 py-1 rounded font-bold uppercase">Ao Vivo / Sábado</span>
             <h1 class="font-oswald text-2xl sm:text-3xl font-bold uppercase tracking-wide mt-2 text-white">UFC Fight Night</h1>
-            <p class="text-ufcRed font-oswald text-lg sm:text-xl font-bold tracking-wider">Rosas Jr. vs. Barcelos</p>
-            <p class="text-xs text-zinc-400 mt-1"><i class="fa-solid fa-location-dot text-ufcRed mr-1"></i> Meta APEX, Las Vegas</p>
+            <p class="text-white font-oswald text-lg sm:text-xl font-bold tracking-wider">Rosas Jr. vs. Barcelos</p>
         </div>
     </header>
 
     <main class="max-w-md mx-auto px-3 mt-4 space-y-6">
 
-        <!-- ================= CARD PRINCIPAL ================= -->
+        <!-- ================= CARD PRELIMINAR (18:00) ================= -->
         <section>
-            <div class="flex items-center justify-between mb-3 px-1">
-                <h2 class="font-oswald text-lg tracking-wide uppercase text-white border-l-4 border-ufcRed pl-2">Card Principal</h2>
-                <span class="text-xs text-zinc-400 font-medium">21:00 (Brasília)</span>
+            <div class="flex items-center justify-between mb-3 px-3 py-2 bg-ufcCard rounded-xl border border-zinc-700 shadow-md">
+                <h2 class="font-oswald text-base sm:text-lg tracking-wide uppercase text-white border-l-4 border-zinc-500 pl-2">Card Preliminar</h2>
+                <span class="font-oswald text-base sm:text-lg tracking-wide text-zinc-300 uppercase font-bold">18:00 (Brasília)</span>
             </div>
 
             <div class="space-y-3">
-                <!-- Luta Principal (Main Event): Raul Rosas Jr. x Raoni Barcelos -->
-                <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-zinc-800 shadow-lg">
-                    <div class="flex justify-between items-center text-[10px] text-zinc-400 uppercase font-medium border-b border-zinc-800 pb-2 mb-2.5">
-                        <span class="text-ufcRed font-bold">Peso-Galo (Até 61,2 Kg) • Luta Principal</span>
-                        <span>5 Rounds</span>
+                <!-- Luta: Rodolfo Bellato x Christian Edwards -->
+                <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-red-600/60 shadow-lg">
+                    <div class="flex justify-between items-center text-[10px] text-zinc-400 uppercase font-medium border-b border-red-600/40 pb-2 mb-2.5">
+                        <span>Peso Meio-Pesado (Até 92,9 Kg)</span>
+                        <span>3 Rounds</span>
+                    </div>
+                    <div class="grid grid-cols-5 items-center gap-1">
+                        <div class="col-span-2 flex items-center space-x-2 min-w-0">
+                            <img src="images/Rodolfo Bellato.png" alt="Rodolfo Bellato" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
+                            <span class="fi fi-br text-base rounded shrink-0 shadow"></span>
+                            <div class="min-w-0">
+                                <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Rodolfo Bellato</h3>
+                                <p class="text-[10px] text-zinc-400 truncate">Brasil</p>
+                            </div>
+                        </div>
+                        <div class="col-span-1 text-center"><span class="font-oswald text-sm font-bold text-ufcRed">VS</span></div>
+                        <div class="col-span-2 flex items-center justify-end space-x-2 min-w-0 text-right">
+                            <div class="min-w-0">
+                                <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Christian Edwards</h3>
+                                <p class="text-[10px] text-zinc-400 truncate">EUA</p>
+                            </div>
+                            <span class="fi fi-us text-base rounded shrink-0 shadow"></span>
+                            <img src="images/Christian Edwards.png" alt="Christian Edwards" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Luta: Elves Brener x Josiah Harrell -->
+                <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-red-600/60 shadow-lg">
+                    <div class="flex justify-between items-center text-[10px] text-zinc-400 uppercase font-medium border-b border-red-600/40 pb-2 mb-2.5">
+                        <span>Peso-Leve (Até 70,3 Kg)</span>
+                        <span>3 Rounds</span>
+                    </div>
+                    <div class="grid grid-cols-5 items-center gap-1">
+                        <div class="col-span-2 flex items-center space-x-2 min-w-0">
+                            <img src="images/Elves Brener.png" alt="Elves Brener" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
+                            <span class="fi fi-br text-base rounded shrink-0 shadow"></span>
+                            <div class="min-w-0">
+                                <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Elves Brener</h3>
+                                <p class="text-[10px] text-zinc-400 truncate">Brasil</p>
+                            </div>
+                        </div>
+                        <div class="col-span-1 text-center"><span class="font-oswald text-sm font-bold text-ufcRed">VS</span></div>
+                        <div class="col-span-2 flex items-center justify-end space-x-2 min-w-0 text-right">
+                            <div class="min-w-0">
+                                <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Josiah Harrell</h3>
+                                <p class="text-[10px] text-zinc-400 truncate">EUA</p>
+                            </div>
+                            <span class="fi fi-us text-base rounded shrink-0 shadow"></span>
+                            <img src="images/Josiah Harrell.png" alt="Josiah Harrell" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Luta: Montel Jackson x Ricky Simon -->
+                <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-red-600/60 shadow-lg">
+                    <div class="flex justify-between items-center text-[10px] text-zinc-400 uppercase font-medium border-b border-red-600/40 pb-2 mb-2.5">
+                        <span>Peso-Galo (Até 61,2 Kg)</span>
+                        <span>3 Rounds</span>
+                    </div>
+                    <div class="grid grid-cols-5 items-center gap-1">
+                        <div class="col-span-2 flex items-center space-x-2 min-w-0">
+                            <img src="images/Montel Jackson.png" alt="Montel Jackson" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
+                            <span class="fi fi-us text-base rounded shrink-0 shadow"></span>
+                            <div class="min-w-0">
+                                <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Montel Jackson</h3>
+                                <p class="text-[10px] text-zinc-400 truncate">EUA</p>
+                            </div>
+                        </div>
+                        <div class="col-span-1 text-center"><span class="font-oswald text-sm font-bold text-ufcRed">VS</span></div>
+                        <div class="col-span-2 flex items-center justify-end space-x-2 min-w-0 text-right">
+                            <div class="min-w-0">
+                                <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Ricky Simon</h3>
+                                <p class="text-[10px] text-zinc-400 truncate">EUA</p>
+                            </div>
+                            <span class="fi fi-us text-base rounded shrink-0 shadow"></span>
+                            <img src="images/Ricky Simon.png" alt="Ricky Simon" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Luta: Norma Dumont x Ailin Perez -->
+                <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-red-600/60 shadow-lg">
+                    <div class="flex justify-between items-center text-[10px] text-zinc-400 uppercase font-medium border-b border-red-600/40 pb-2 mb-2.5">
+                        <span>Peso-Galo Feminino</span>
+                        <span>3 Rounds</span>
+                    </div>
+                    <div class="grid grid-cols-5 items-center gap-1">
+                        <div class="col-span-2 flex items-center space-x-2 min-w-0">
+                            <img src="images/Norma Dumont.png" alt="Norma Dumont" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
+                            <span class="fi fi-br text-base rounded shrink-0 shadow"></span>
+                            <div class="min-w-0">
+                                <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Norma Dumont</h3>
+                                <p class="text-[10px] text-zinc-400 truncate">Brasil</p>
+                            </div>
+                        </div>
+                        <div class="col-span-1 text-center"><span class="font-oswald text-sm font-bold text-ufcRed">VS</span></div>
+                        <div class="col-span-2 flex items-center justify-end space-x-2 min-w-0 text-right">
+                            <div class="min-w-0">
+                                <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Ailín Pérez</h3>
+                                <p class="text-[10px] text-zinc-400 truncate">Argentina</p>
+                            </div>
+                            <span class="fi fi-ar text-base rounded shrink-0 shadow"></span>
+                            <img src="images/Ailín Pérez.png" alt="Ailín Pérez" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Luta: John Castaneda x Heili Alateng -->
+                <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-red-600/60 shadow-lg">
+                    <div class="flex justify-between items-center text-[10px] text-zinc-400 uppercase font-medium border-b border-red-600/40 pb-2 mb-2.5">
+                        <span>Peso-Galo</span>
+                        <span>3 Rounds</span>
+                    </div>
+                    <div class="grid grid-cols-5 items-center gap-1">
+                        <div class="col-span-2 flex items-center space-x-2 min-w-0">
+                            <img src="images/John Castañeda.png" alt="John Castañeda" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
+                            <span class="fi fi-us text-base rounded shrink-0 shadow"></span>
+                            <div class="min-w-0">
+                                <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">John Castañeda</h3>
+                                <p class="text-[10px] text-zinc-400 truncate">EUA</p>
+                            </div>
+                        </div>
+                        <div class="col-span-1 text-center"><span class="font-oswald text-sm font-bold text-ufcRed">VS</span></div>
+                        <div class="col-span-2 flex items-center justify-end space-x-2 min-w-0 text-right">
+                            <div class="min-w-0">
+                                <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Heili Alateng</h3>
+                                <p class="text-[10px] text-zinc-400 truncate">China</p>
+                            </div>
+                            <span class="fi fi-cn text-base rounded shrink-0 shadow"></span>
+                            <img src="images/Heili Alateng.png" alt="Heili Alateng" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CARD PRINCIPAL (21:00) ================= -->
+        <section class="mt-8">
+            <div class="flex items-center justify-between mb-3 px-3 py-2 bg-ufcCard rounded-xl border border-amber-500/60 shadow-[0_0_12px_rgba(245,158,11,0.2)]">
+                <h2 class="font-oswald text-base sm:text-lg tracking-wide uppercase text-white border-l-4 border-ufcRed pl-2">Card Principal</h2>
+                <span class="font-oswald text-base sm:text-lg tracking-wide text-amber-400 uppercase font-bold">21:00 (Brasília)</span>
+            </div>
+
+            <div class="space-y-3">
+                <!-- Luta Principal (Main Event): Raul Rosas Jr. x Raoni Barcelos (COM BORDA DOURADA) -->
+                <div class="fight-card bg-ufcCard rounded-xl p-3.5 border-2 border-amber-500 shadow-[0_0_15px_rgba(245,158,11,0.25)]">
+                    <div class="flex justify-between items-center text-[10px] uppercase font-medium border-b border-amber-500/30 pb-2 mb-2.5">
+                        <span class="text-white font-bold">Peso-Galo (Até 61,2 Kg) • Luta Principal</span>
+                        <span class="text-white">5 Rounds</span>
                     </div>
                     <div class="grid grid-cols-5 items-center gap-1">
                         <!-- Lutador 1 -->
                         <div class="col-span-2 flex items-center space-x-2 min-w-0">
-                            <img src="images/raul.png" alt="Raúl Rosas Jr." class="w-10 h-10 rounded-full object-cover border border-zinc-700 shrink-0">
+                            <img src="images/raul.png" alt="Raúl Rosas Jr." class="w-10 h-10 rounded-full object-cover border border-amber-500/50 shrink-0">
                             <span class="fi fi-mx text-base rounded shrink-0 shadow"></span>
                             <div class="min-w-0">
                                 <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Raúl Rosas Jr.</h3>
@@ -83,20 +227,20 @@
                                 <p class="text-[10px] text-zinc-400 truncate">Brasil</p>
                             </div>
                             <span class="fi fi-br text-base rounded shrink-0 shadow"></span>
-                            <img src="images/Raoni Barcelos.png" alt="Raoni Barcelos" class="w-10 h-10 rounded-full object-cover border border-zinc-700 shrink-0">
+                            <img src="images/Raoni Barcelos.png" alt="Raoni Barcelos" class="w-10 h-10 rounded-full object-cover border border-amber-500/50 shrink-0">
                         </div>
                     </div>
                 </div>
 
                 <!-- Co-Main Event: Rodolfo Vieira x Robert Bryczek -->
-                <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-zinc-800 shadow-lg">
-                    <div class="flex justify-between items-center text-[10px] text-zinc-400 uppercase font-medium border-b border-zinc-800 pb-2 mb-2.5">
+                <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-red-600/60 shadow-lg">
+                    <div class="flex justify-between items-center text-[10px] text-zinc-400 uppercase font-medium border-b border-red-600/40 pb-2 mb-2.5">
                         <span>Peso-Médio (Até 83,9 Kg) • Co-Main Event</span>
                         <span>3 Rounds</span>
                     </div>
                     <div class="grid grid-cols-5 items-center gap-1">
                         <div class="col-span-2 flex items-center space-x-2 min-w-0">
-                            <img src="images/Rodolfo Vieira.png" alt="Rodolfo Vieira" class="w-10 h-10 rounded-full object-cover border border-zinc-700 shrink-0">
+                            <img src="images/Rodolfo Vieira.png" alt="Rodolfo Vieira" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
                             <span class="fi fi-br text-base rounded shrink-0 shadow"></span>
                             <div class="min-w-0">
                                 <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Rodolfo Vieira</h3>
@@ -112,14 +256,14 @@
                                 <p class="text-[10px] text-zinc-400 truncate">Polônia</p>
                             </div>
                             <span class="fi fi-pl text-base rounded shrink-0 shadow"></span>
-                            <img src="images/Robert Bryczek.png" alt="Robert Bryczek" class="w-10 h-10 rounded-full object-cover border border-zinc-700 shrink-0">
+                            <img src="images/Robert Bryczek.png" alt="Robert Bryczek" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
                         </div>
                     </div>
                 </div>
 
                 <!-- Outras Lutas do Card Principal -->
-                <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-zinc-800 shadow-lg">
-                    <div class="flex justify-between items-center text-[10px] text-zinc-400 uppercase font-medium border-b border-zinc-800 pb-2 mb-2.5">
+                <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-red-600/60 shadow-lg">
+                    <div class="flex justify-between items-center text-[10px] text-zinc-400 uppercase font-medium border-b border-red-600/40 pb-2 mb-2.5">
                         <span>Peso-Galo</span>
                         <span>3 Rounds</span>
                     </div>
@@ -144,8 +288,8 @@
                     </div>
                 </div>
 
-                <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-zinc-800 shadow-lg">
-                    <div class="flex justify-between items-center text-[10px] text-zinc-400 uppercase font-medium border-b border-zinc-800 pb-2 mb-2.5">
+                <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-red-600/60 shadow-lg">
+                    <div class="flex justify-between items-center text-[10px] text-zinc-400 uppercase font-medium border-b border-red-600/40 pb-2 mb-2.5">
                         <span>Peso-Palha Feminino</span>
                         <span>3 Rounds</span>
                     </div>
@@ -172,150 +316,6 @@
             </div>
         </section>
 
-        <!-- ================= CARD PRELIMINAR ================= -->
-        <section class="mt-8">
-            <div class="flex items-center justify-between mb-3 px-1">
-                <h2 class="font-oswald text-lg tracking-wide uppercase text-white border-l-4 border-zinc-500 pl-2">Card Preliminar</h2>
-                <span class="text-xs text-zinc-400 font-medium">18:00 (Brasília)</span>
-            </div>
-
-            <div class="space-y-3">
-                <!-- Luta: Rodolfo Bellato x Christian Edwards -->
-                <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-zinc-800 shadow-lg">
-                    <div class="flex justify-between items-center text-[10px] text-zinc-400 uppercase font-medium border-b border-zinc-800 pb-2 mb-2.5">
-                        <span>Peso Meio-Pesado (Até 92,9 Kg)</span>
-                        <span>3 Rounds</span>
-                    </div>
-                    <div class="grid grid-cols-5 items-center gap-1">
-                        <div class="col-span-2 flex items-center space-x-2 min-w-0">
-                            <img src="images/Rodolfo Bellato.png" alt="Rodolfo Bellato" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                            <span class="fi fi-br text-base rounded shrink-0 shadow"></span>
-                            <div class="min-w-0">
-                                <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Rodolfo Bellato</h3>
-                                <p class="text-[10px] text-zinc-400 truncate">Brasil</p>
-                            </div>
-                        </div>
-                        <div class="col-span-1 text-center"><span class="font-oswald text-sm font-bold text-ufcRed">VS</span></div>
-                        <div class="col-span-2 flex items-center justify-end space-x-2 min-w-0 text-right">
-                            <div class="min-w-0">
-                                <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Christian Edwards</h3>
-                                <p class="text-[10px] text-zinc-400 truncate">EUA</p>
-                            </div>
-                            <span class="fi fi-us text-base rounded shrink-0 shadow"></span>
-                            <img src="images/Christian Edwards.png" alt="Christian Edwards" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Luta: Elves Brener x Josiah Harrell -->
-                <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-zinc-800 shadow-lg">
-                    <div class="flex justify-between items-center text-[10px] text-zinc-400 uppercase font-medium border-b border-zinc-800 pb-2 mb-2.5">
-                        <span>Peso-Leve (Até 70,3 Kg)</span>
-                        <span>3 Rounds</span>
-                    </div>
-                    <div class="grid grid-cols-5 items-center gap-1">
-                        <div class="col-span-2 flex items-center space-x-2 min-w-0">
-                            <img src="images/Elves Brener.png" alt="Elves Brener" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                            <span class="fi fi-br text-base rounded shrink-0 shadow"></span>
-                            <div class="min-w-0">
-                                <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Elves Brener</h3>
-                                <p class="text-[10px] text-zinc-400 truncate">Brasil</p>
-                            </div>
-                        </div>
-                        <div class="col-span-1 text-center"><span class="font-oswald text-sm font-bold text-ufcRed">VS</span></div>
-                        <div class="col-span-2 flex items-center justify-end space-x-2 min-w-0 text-right">
-                            <div class="min-w-0">
-                                <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Josiah Harrell</h3>
-                                <p class="text-[10px] text-zinc-400 truncate">EUA</p>
-                            </div>
-                            <span class="fi fi-us text-base rounded shrink-0 shadow"></span>
-                            <img src="images/Josiah Harrell.png" alt="Josiah Harrell" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Luta: Montel Jackson x Ricky Simon -->
-                <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-zinc-800 shadow-lg">
-                    <div class="flex justify-between items-center text-[10px] text-zinc-400 uppercase font-medium border-b border-zinc-800 pb-2 mb-2.5">
-                        <span>Peso-Galo (Até 61,2 Kg)</span>
-                        <span>3 Rounds</span>
-                    </div>
-                    <div class="grid grid-cols-5 items-center gap-1">
-                        <div class="col-span-2 flex items-center space-x-2 min-w-0">
-                            <img src="images/Montel Jackson.png" alt="Montel Jackson" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                            <span class="fi fi-us text-base rounded shrink-0 shadow"></span>
-                            <div class="min-w-0">
-                                <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Montel Jackson</h3>
-                                <p class="text-[10px] text-zinc-400 truncate">EUA</p>
-                            </div>
-                        </div>
-                        <div class="col-span-1 text-center"><span class="font-oswald text-sm font-bold text-ufcRed">VS</span></div>
-                        <div class="col-span-2 flex items-center justify-end space-x-2 min-w-0 text-right">
-                            <div class="min-w-0">
-                                <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Ricky Simon</h3>
-                                <p class="text-[10px] text-zinc-400 truncate">EUA</p>
-                            </div>
-                            <span class="fi fi-us text-base rounded shrink-0 shadow"></span>
-                            <img src="images/Ricky Simon.png" alt="Ricky Simon" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Luta: Norma Dumont x Ailin Perez -->
-                <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-zinc-800 shadow-lg">
-                    <div class="flex justify-between items-center text-[10px] text-zinc-400 uppercase font-medium border-b border-zinc-800 pb-2 mb-2.5">
-                        <span>Peso-Galo Feminino</span>
-                        <span>3 Rounds</span>
-                    </div>
-                    <div class="grid grid-cols-5 items-center gap-1">
-                        <div class="col-span-2 flex items-center space-x-2 min-w-0">
-                            <img src="images/Norma Dumont.png" alt="Norma Dumont" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                            <span class="fi fi-br text-base rounded shrink-0 shadow"></span>
-                            <div class="min-w-0">
-                                <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Norma Dumont</h3>
-                                <p class="text-[10px] text-zinc-400 truncate">Brasil</p>
-                            </div>
-                        </div>
-                        <div class="col-span-1 text-center"><span class="font-oswald text-sm font-bold text-ufcRed">VS</span></div>
-                        <div class="col-span-2 flex items-center justify-end space-x-2 min-w-0 text-right">
-                            <div class="min-w-0">
-                                <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Ailín Pérez</h3>
-                                <p class="text-[10px] text-zinc-400 truncate">Argentina</p>
-                            </div>
-                            <span class="fi fi-ar text-base rounded shrink-0 shadow"></span>
-                            <img src="images/Ailín Pérez.png" alt="Ailín Pérez" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Luta: John Castaneda x Heili Alateng -->
-                <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-zinc-800 shadow-lg">
-                    <div class="flex justify-between items-center text-[10px] text-zinc-400 uppercase font-medium border-b border-zinc-800 pb-2 mb-2.5">
-                        <span>Peso-Galo</span>
-                        <span>3 Rounds</span>
-                    </div>
-                    <div class="grid grid-cols-5 items-center gap-1">
-                        <div class="col-span-2 flex items-center space-x-2 min-w-0">
-                            <img src="images/John Castañeda.png" alt="John Castañeda" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                            <span class="fi fi-us text-base rounded shrink-0 shadow"></span>
-                            <div class="min-w-0">
-                                <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">John Castañeda</h3>
-                                <p class="text-[10px] text-zinc-400 truncate">EUA</p>
-                            </div>
-                        </div>
-                        <div class="col-span-1 text-center"><span class="font-oswald text-sm font-bold text-ufcRed">VS</span></div>
-                        <div class="col-span-2 flex items-center justify-end space-x-2 min-w-0 text-right">
-                            <div class="min-w-0">
-                                <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Heili Alateng</h3>
-                                <p class="text-[10px] text-zinc-400 truncate">China</p>
-                            </div>
-                            <span class="fi fi-cn text-base rounded shrink-0 shadow"></span>
-                            <img src="images/Heili Alateng.png" alt="Heili Alateng" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- Rodapé -->
