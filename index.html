@@ -11,53 +11,68 @@
             box-sizing: border-box;
         }
         body {
-            background-color: #0b0b0d;
-            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #060608;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
             color: #ffffff;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
             min-height: 100vh;
-            padding: 0;
+            padding: 20px 10px;
         }
         .container {
             width: 100%;
-            max-width: 480px;
+            max-width: 450px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            position: relative;
+            gap: 16px;
+        }
+        .horario-badge {
+            background: rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 800;
+            padding: 10px 24px;
+            border-radius: 6px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border-image: linear-gradient(135deg, #d4af37, #ff0000) 1;
+            border-style: solid;
+            border-width: 2px;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.15);
+            text-align: center;
+            width: 100%;
+        }
+        .horario-badge span {
+            color: #d4af37;
+        }
+        .banner-wrapper {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(212, 175, 55, 0.1);
+            border: 1px solid #1c1c1f;
         }
         .banner {
             width: 100%;
             height: auto;
             display: block;
         }
-        .horario-badge {
-            background: linear-gradient(135deg, #cc0000 0%, #b38f00 100%);
-            color: #ffffff;
-            font-size: 1.5rem;
-            font-weight: 900;
-            padding: 15px 40px;
-            border-radius: 50px;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 20px rgba(255, 0, 0, 0.4);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
-            text-transform: uppercase;
-            margin-top: -25px;
-            z-index: 10;
-            border: 2px solid #ffffff;
-        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Caminho corrigido para puxar da pasta images e com o formato correto .jpg -->
-        <img class="banner" src="images/cartaz.jpg" alt="UFC Hoje">
+        <!-- Horário reposicionado no topo com design premium de transmissão -->
         <div class="horario-badge">
-            Começa às 17:00
+            Transmissão ao vivo <span>•</span> Começa às 17:00
+        </div>
+
+        <!-- Box do Banner apontando para o caminho correto do seu GitHub -->
+        <div class="banner-wrapper">
+            <img class="banner" src="images/cartaz.jpg" alt="UFC Hoje — Card Principal">
         </div>
     </div>
 
