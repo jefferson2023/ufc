@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UFC Hoje — Card Principal</title>
+    <title>UFC Hoje - Card Principal</title>
     <style>
         * {
             margin: 0;
@@ -12,54 +12,50 @@
         }
         body {
             background-color: #0b0b0d;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             color: #ffffff;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             min-height: 100vh;
-            padding: 10px;
+            padding: 0;
         }
         .container {
             width: 100%;
-            max-width: 450px;
-            text-align: center;
+            max-width: 480px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            align-items: center;
+            position: relative;
         }
         .banner {
             width: 100%;
             height: auto;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
-            border: 2px solid #2d2d30;
             display: block;
         }
         .horario-badge {
-            background: linear-gradient(135deg, #990000 0%, #d4af37 100%);
+            background: linear-gradient(135deg, #cc0000 0%, #b38f00 100%);
             color: #ffffff;
-            font-size: 1.6rem;
-            font-weight: 800;
-            padding: 14px 28px;
+            font-size: 1.5rem;
+            font-weight: 900;
+            padding: 15px 40px;
             border-radius: 50px;
             letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-            display: inline-block;
-            margin: 0 auto;
+            box-shadow: 0 4px 20px rgba(255, 0, 0, 0.4);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
             text-transform: uppercase;
+            margin-top: -25px;
+            z-index: 10;
+            border: 2px solid #ffffff;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Banner hospedado online para carregar em qualquer celular sem quebrar -->
-        <img class="banner" src="https://ibb.co" alt="UFC Hoje — Card Principal">
-        
-        <!-- Horário solicitado -->
+        <!-- Puxando o seu arquivo local do repositório -->
+        <img class="banner" src="cartaz.png" alt="UFC Hoje">
         <div class="horario-badge">
             Começa às 17:00
         </div>
