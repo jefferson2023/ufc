@@ -3,450 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UFC 332</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome para ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: Oswald para fontes estilo UFC -->
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Flags CSS para bandeiras -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"/>
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        ufcRed: '#D20A0A',
-                        ufcDark: '#0B0B0B',
-                        ufcCard: '#161616',
-                        ufcGray: '#1F1F1F'
-                    },
-                    fontFamily: {
-                        oswald: ['Oswald', 'sans-serif'],
-                        roboto: ['Roboto', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    <title>UFC Hoje — Card Principal</title>
     <style>
-        body { font-family: 'Roboto', sans-serif; background-color: #0b0b0b; color: #ffffff; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #0b0b0d;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 10px;
+        }
+        .container {
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .banner {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
+            border: 2px solid #2d2d30;
+            display: block;
+        }
+        .horario-badge {
+            background: linear-gradient(135deg, #990000 0%, #d4af37 100%);
+            color: #ffffff;
+            font-size: 1.6rem;
+            font-weight: 800;
+            padding: 14px 28px;
+            border-radius: 50px;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            display: inline-block;
+            margin: 0 auto;
+            text-transform: uppercase;
+        }
     </style>
 </head>
-<body class="bg-ufcDark min-h-screen pb-12">
+<body>
 
-    <!-- Cabeçalho do Evento -->
-    <header class="bg-gradient-to-b from-black via-zinc-900 to-ufcDark border-b border-zinc-800 py-4 px-4 text-center">
-        <div class="max-w-md mx-auto flex flex-col items-center justify-center space-y-2">
-            <!-- Data em destaque máximo -->
-            <div class="inline-flex items-center space-x-2 bg-red-600/20 border border-red-600/60 text-white px-3.5 py-1 rounded-full shadow-md">
-                <i class="fa-regular fa-calendar-days text-sm text-red-500"></i>
-                <span class="font-oswald text-xs sm:text-sm uppercase tracking-wider font-bold text-white">Sábado, 03/10/2026</span>
-            </div>
-
-            <!-- Nome do Evento -->
-            <div class="flex items-center space-x-2">
-                <h1 class="font-oswald text-xl sm:text-2xl font-bold uppercase tracking-wider text-white">UFC</h1>
-                <span class="bg-amber-600 text-white font-oswald text-xl sm:text-2xl tracking-wide px-2.5 py-0.5 rounded font-bold uppercase shadow-md">UFC 332 (Silva vs. Wang)</span>
-            </div>
+    <div class="container">
+        <!-- Banner hospedado online para carregar em qualquer celular sem quebrar -->
+        <img class="banner" src="https://ibb.co" alt="UFC Hoje — Card Principal">
+        
+        <!-- Horário solicitado -->
+        <div class="horario-badge">
+            Começa às 17:00
         </div>
-    </header>
-
-    <main class="max-w-md mx-auto px-3 mt-4">
-
-        <!-- ================= EVENTO: UFC 332 ================= -->
-        <div class="space-y-6">
-            
-            <!-- 1. Preliminares Iniciais (17:00) -->
-            <section>
-                <div class="flex items-center justify-between mb-3 px-3 py-2 bg-ufcCard rounded-xl border border-zinc-700 shadow-md">
-                    <h2 class="font-oswald text-base sm:text-lg tracking-wide uppercase text-white border-l-4 border-zinc-500 pl-2">Preliminares Iniciais</h2>
-                    <span class="font-oswald text-base sm:text-lg tracking-wide text-white uppercase font-bold">17:00</span>
-                </div>
-
-                <div class="space-y-3">
-                    <!-- Johnny Walker x Mick Parkin -->
-                    <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-red-600/60 shadow-lg">
-                        <div class="flex justify-between items-center text-[10px] text-zinc-300 uppercase font-medium border-b border-red-600/40 pb-2 mb-2.5">
-                            <span>Peso Pesado</span>
-                            <span>3 Rounds</span>
-                        </div>
-                        <div class="grid grid-cols-5 items-center gap-1">
-                            <div class="col-span-2 flex items-center space-x-2 min-w-0">
-                                <img src="https://raw.githubusercontent.com/jefferson2023/ufc/main/images/Johnny%20Walker.png" alt="Johnny Walker" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                                <span class="fi fi-br text-base rounded shrink-0 shadow"></span>
-                                <div class="min-w-0">
-                                    <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Johnny Walker</h3>
-                                    <p class="text-[10px] text-zinc-400 truncate">Brasil</p>
-                                </div>
-                            </div>
-                            <div class="col-span-1 text-center"><span class="font-oswald text-sm font-bold text-ufcRed">VS</span></div>
-                            <div class="col-span-2 flex items-center justify-end space-x-2 min-w-0 text-right">
-                                <div class="min-w-0">
-                                    <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Mick Parkin</h3>
-                                    <p class="text-[10px] text-zinc-400 truncate">Inglaterra</p>
-                                </div>
-                                <span class="fi fi-gb text-base rounded shrink-0 shadow"></span>
-                                <img src="https://raw.githubusercontent.com/jefferson2023/ufc/main/images/Mick%20Parkin.png" alt="Mick Parkin" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Rafael dos Anjos x Alexander Hernandez -->
-                    <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-red-600/60 shadow-lg">
-                        <div class="flex justify-between items-center text-[10px] text-zinc-300 uppercase font-medium border-b border-red-600/40 pb-2 mb-2.5">
-                            <span>Peso-Leve</span>
-                            <span>3 Rounds</span>
-                        </div>
-                        <div class="grid grid-cols-5 items-center gap-1">
-                            <div class="col-span-2 flex items-center space-x-2 min-w-0">
-                                <img src="https://raw.githubusercontent.com/jefferson2023/ufc/main/images/Rafael%20dos%20Anjos.png" alt="Rafael dos Anjos" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                                <span class="fi fi-br text-base rounded shrink-0 shadow"></span>
-                                <div class="min-w-0">
-                                    <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Rafael dos Anjos</h3>
-                                    <p class="text-[10px] text-zinc-400 truncate">Brasil</p>
-                                </div>
-                            </div>
-                            <div class="col-span-1 text-center"><span class="font-oswald text-sm font-bold text-ufcRed">VS</span></div>
-                            <div class="col-span-2 flex items-center justify-end space-x-2 min-w-0 text-right">
-                                <div class="min-w-0">
-                                    <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Alexander Hernandez</h3>
-                                    <p class="text-[10px] text-zinc-400 truncate">EUA</p>
-                                </div>
-                                <span class="fi fi-us text-base rounded shrink-0 shadow"></span>
-                                <img src="https://raw.githubusercontent.com/jefferson2023/ufc/main/images/Alexander%20Hernandez.png" alt="Alexander Hernandez" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Marvin Vettori x Ismail Naurdiev -->
-                    <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-red-600/60 shadow-lg">
-                        <div class="flex justify-between items-center text-[10px] text-zinc-300 uppercase font-medium border-b border-red-600/40 pb-2 mb-2.5">
-                            <span>Peso-Médio</span>
-                            <span>3 Rounds</span>
-                        </div>
-                        <div class="grid grid-cols-5 items-center gap-1">
-                            <div class="col-span-2 flex items-center space-x-2 min-w-0">
-                                <img src="https://raw.githubusercontent.com/jefferson2023/ufc/main/images/Marvin%20Vettori.png" alt="Marvin Vettori" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                                <span class="fi fi-it text-base rounded shrink-0 shadow"></span>
-                                <div class="min-w-0">
-                                    <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Marvin Vettori</h3>
-                                    <p class="text-[10px] text-zinc-400 truncate">Itália</p>
-                                </div>
-                            </div>
-                            <div class="col-span-1 text-center"><span class="font-oswald text-sm font-bold text-ufcRed">VS</span></div>
-                            <div class="col-span-2 flex items-center justify-end space-x-2 min-w-0 text-right">
-                                <div class="min-w-0">
-                                    <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Ismail Naurdiev</h3>
-                                    <p class="text-[10px] text-zinc-400 truncate">Marrocos</p>
-                                </div>
-                                <span class="fi fi-ma text-base rounded shrink-0 shadow"></span>
-                                <img src="https://raw.githubusercontent.com/jefferson2023/ufc/main/images/Ismail%20Naurdiev.png" alt="Ismail Naurdiev" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Court McGee x Eric Nolan -->
-                    <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-red-600/60 shadow-lg">
-                        <div class="flex justify-between items-center text-[10px] text-zinc-300 uppercase font-medium border-b border-red-600/40 pb-2 mb-2.5">
-                            <span>Peso Meio-Médio</span>
-                            <span>3 Rounds</span>
-                        </div>
-                        <div class="grid grid-cols-5 items-center gap-1">
-                            <div class="col-span-2 flex items-center space-x-2 min-w-0">
-                                <img src="https://raw.githubusercontent.com/jefferson2023/ufc/main/images/Court%20McGee.png" alt="Court McGee" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                                <span class="fi fi-us text-base rounded shrink-0 shadow"></span>
-                                <div class="min-w-0">
-                                    <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Court McGee</h3>
-                                    <p class="text-[10px] text-zinc-400 truncate">EUA</p>
-                                </div>
-                            </div>
-                            <div class="col-span-1 text-center"><span class="font-oswald text-sm font-bold text-ufcRed">VS</span></div>
-                            <div class="col-span-2 flex items-center justify-end space-x-2 min-w-0 text-right">
-                                <div class="min-w-0">
-                                    <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Eric Nolan</h3>
-                                    <p class="text-[10px] text-zinc-400 truncate">EUA</p>
-                                </div>
-                                <span class="fi fi-us text-base rounded shrink-0 shadow"></span>
-                                <img src="https://raw.githubusercontent.com/jefferson2023/ufc/main/images/Eric%20Nolan.png" alt="Eric Nolan" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 2. Card Preliminar (19:00) -->
-            <section class="mt-8">
-                <div class="flex items-center justify-between mb-3 px-3 py-2 bg-ufcCard rounded-xl border border-zinc-700 shadow-md">
-                    <h2 class="font-oswald text-base sm:text-lg tracking-wide uppercase text-white border-l-4 border-zinc-500 pl-2">Card Preliminar</h2>
-                    <span class="font-oswald text-base sm:text-lg tracking-wide text-white uppercase font-bold">19:00</span>
-                </div>
-
-                <div class="space-y-3">
-                    <!-- Imanol Rodriguez x Alden Coria -->
-                    <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-red-600/60 shadow-lg">
-                        <div class="flex justify-between items-center text-[10px] text-zinc-300 uppercase font-medium border-b border-red-600/40 pb-2 mb-2.5">
-                            <span>Peso Mosca</span>
-                            <span>3 Rounds</span>
-                        </div>
-                        <div class="grid grid-cols-5 items-center gap-1">
-                            <div class="col-span-2 flex items-center space-x-2 min-w-0">
-                                <img src="https://raw.githubusercontent.com/jefferson2023/ufc/main/images/Imanol%20Rodr%C3%ADguez.png" alt="Imanol Rodríguez" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                                <span class="fi fi-mx text-base rounded shrink-0 shadow"></span>
-                                <div class="min-w-0">
-                                    <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Imanol Rodríguez</h3>
-                                    <p class="text-[10px] text-zinc-400 truncate">México</p>
-                                </div>
-                            </div>
-                            <div class="col-span-1 text-center"><span class="font-oswald text-sm font-bold text-ufcRed">VS</span></div>
-                            <div class="col-span-2 flex items-center justify-end space-x-2 min-w-0 text-right">
-                                <div class="min-w-0">
-                                    <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Alden Coria</h3>
-                                    <p class="text-[10px] text-zinc-400 truncate">EUA</p>
-                                </div>
-                                <span class="fi fi-us text-base rounded shrink-0 shadow"></span>
-                                <img src="https://raw.githubusercontent.com/jefferson2023/ufc/main/images/Alden%20Coria.png" alt="Alden Coria" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Damian Pinas x Andrey Pulyaev -->
-                    <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-red-600/60 shadow-lg">
-                        <div class="flex justify-between items-center text-[10px] text-zinc-300 uppercase font-medium border-b border-red-600/40 pb-2 mb-2.5">
-                            <span>Peso-Médio</span>
-                            <span>3 Rounds</span>
-                        </div>
-                        <div class="grid grid-cols-5 items-center gap-1">
-                            <div class="col-span-2 flex items-center space-x-2 min-w-0">
-                                <img src="https://raw.githubusercontent.com/jefferson2023/ufc/main/images/Damian%20Pinas.png" alt="Damian Pinas" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                                <span class="fi fi-aw text-base rounded shrink-0 shadow"></span>
-                                <div class="min-w-0">
-                                    <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Damian Pinas</h3>
-                                    <p class="text-[10px] text-zinc-400 truncate">Aruba</p>
-                                </div>
-                            </div>
-                            <div class="col-span-1 text-center"><span class="font-oswald text-sm font-bold text-ufcRed">VS</span></div>
-                            <div class="col-span-2 flex items-center justify-end space-x-2 min-w-0 text-right">
-                                <div class="min-w-0">
-                                    <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Andrey Pulyaev</h3>
-                                    <p class="text-[10px] text-zinc-400 truncate">Rússia</p>
-                                </div>
-                                <span class="fi fi-ru text-base rounded shrink-0 shadow"></span>
-                                <img src="https://raw.githubusercontent.com/jefferson2023/ufc/main/images/Andrey%20Pulyaev.png" alt="Andrey Pulyaev" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Marcus McGhee x Benardo Sopaj -->
-                    <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-red-600/60 shadow-lg">
-                        <div class="flex justify-between items-center text-[10px] text-zinc-300 uppercase font-medium border-b border-red-600/40 pb-2 mb-2.5">
-                            <span>Peso Galo</span>
-                            <span>3 Rounds</span>
-                        </div>
-                        <div class="grid grid-cols-5 items-center gap-1">
-                            <div class="col-span-2 flex items-center space-x-2 min-w-0">
-                                <img src="https://raw.githubusercontent.com/jefferson2023/ufc/main/images/Marcus%20McGhee.png" alt="Marcus McGhee" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                                <span class="fi fi-us text-base rounded shrink-0 shadow"></span>
-                                <div class="min-w-0">
-                                    <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Marcus McGhee</h3>
-                                    <p class="text-[10px] text-zinc-400 truncate">EUA</p>
-                                </div>
-                            </div>
-                            <div class="col-span-1 text-center"><span class="font-oswald text-sm font-bold text-ufcRed">VS</span></div>
-                            <div class="col-span-2 flex items-center justify-end space-x-2 min-w-0 text-right">
-                                <div class="min-w-0">
-                                    <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Benardo Sopaj</h3>
-                                    <p class="text-[10px] text-zinc-400 truncate">Albânia</p>
-                                </div>
-                                <span class="fi fi-al text-base rounded shrink-0 shadow"></span>
-                                <img src="https://raw.githubusercontent.com/jefferson2023/ufc/main/images/Benardo%20Sopaj.png" alt="Benardo Sopaj" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Anthony Wint x Lucas Armand -->
-                    <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-red-600/60 shadow-lg">
-                        <div class="flex justify-between items-center text-[10px] text-zinc-300 uppercase font-medium border-b border-red-600/40 pb-2 mb-2.5">
-                            <span>Peso Pesado</span>
-                            <span>3 Rounds</span>
-                        </div>
-                        <div class="grid grid-cols-5 items-center gap-1">
-                            <div class="col-span-2 flex items-center space-x-2 min-w-0">
-                                <img src="https://raw.githubusercontent.com/jefferson2023/ufc/main/images/Anthony%20Wint.png" alt="Anthony Wint" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                                <span class="fi fi-us text-base rounded shrink-0 shadow"></span>
-                                <div class="min-w-0">
-                                    <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Anthony Wint</h3>
-                                    <p class="text-[10px] text-zinc-400 truncate">EUA</p>
-                                </div>
-                            </div>
-                            <div class="col-span-1 text-center"><span class="font-oswald text-sm font-bold text-ufcRed">VS</span></div>
-                            <div class="col-span-2 flex items-center justify-end space-x-2 min-w-0 text-right">
-                                <div class="min-w-0">
-                                    <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Lucas Armand</h3>
-                                    <p class="text-[10px] text-zinc-400 truncate">EUA</p>
-                                </div>
-                                <span class="fi fi-us text-base rounded shrink-0 shadow"></span>
-                                <img src="https://raw.githubusercontent.com/jefferson2023/ufc/main/images/Lucas%20Armand.png" alt="Lucas Armand" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 3. Card Principal (21:00) -->
-            <section class="mt-8">
-                <div class="flex items-center justify-between mb-3 px-3 py-2 bg-ufcCard rounded-xl border border-amber-500/60 shadow-[0_0_12px_rgba(245,158,11,0.2)]">
-                    <h2 class="font-oswald text-base sm:text-lg tracking-wide uppercase text-white border-l-4 border-ufcRed pl-2">Card Principal</h2>
-                    <span class="font-oswald text-base sm:text-lg tracking-wide text-amber-400 uppercase font-bold">21:00</span>
-                </div>
-
-                <div class="space-y-3">
-                    <!-- Main Event: Natália Silva x Wang Cong -->
-                    <div class="fight-card bg-ufcCard rounded-xl p-3.5 border-2 border-amber-500 shadow-[0_0_15px_rgba(245,158,11,0.25)]">
-                        <div class="flex justify-between items-center text-[10px] uppercase font-medium border-b border-amber-500/30 pb-2 mb-2.5">
-                            <span class="text-white font-bold">Peso-Mosca Feminino • Disputa de Cinturão (Luta Principal)</span>
-                            <span class="text-white">5 Rounds</span>
-                        </div>
-                        <div class="grid grid-cols-5 items-center gap-1">
-                            <div class="col-span-2 flex items-center space-x-2 min-w-0">
-                                <img src="https://raw.githubusercontent.com/jefferson2023/ufc/main/images/Nat%C3%A1lia%20Silva.png" alt="Natália Silva" class="w-10 h-10 rounded-full object-cover border border-amber-500/50 shrink-0">
-                                <span class="fi fi-br text-base rounded shrink-0 shadow"></span>
-                                <div class="min-w-0">
-                                    <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Natália Silva</h3>
-                                    <p class="text-[10px] text-zinc-400 truncate">Brasil</p>
-                                </div>
-                            </div>
-                            <div class="col-span-1 text-center"><span class="font-oswald text-sm font-bold text-ufcRed">VS</span></div>
-                            <div class="col-span-2 flex items-center justify-end space-x-2 min-w-0 text-right">
-                                <div class="min-w-0">
-                                    <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Wang Cong</h3>
-                                    <p class="text-[10px] text-zinc-400 truncate">China</p>
-                                </div>
-                                <span class="fi fi-cn text-base rounded shrink-0 shadow"></span>
-                                <img src="https://raw.githubusercontent.com/jefferson2023/ufc/main/images/Wang%20Cong.png" alt="Wang Cong" class="w-10 h-10 rounded-full object-cover border border-amber-500/50 shrink-0">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Co-Main Event: Deiveson Figueiredo x Payton Talbott -->
-                    <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-red-600/60 shadow-lg">
-                        <div class="flex justify-between items-center text-[10px] text-zinc-300 uppercase font-medium border-b border-red-600/40 pb-2 mb-2.5">
-                            <span>Peso-Galo • Co-Main Event</span>
-                            <span>3 Rounds</span>
-                        </div>
-                        <div class="grid grid-cols-5 items-center gap-1">
-                            <div class="col-span-2 flex items-center space-x-2 min-w-0">
-                                <img src="https://raw.githubusercontent.com/jefferson2023/ufc/main/images/Deiveson%20Figueiredo.png" alt="Deiveson Figueiredo" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                                <span class="fi fi-br text-base rounded shrink-0 shadow"></span>
-                                <div class="min-w-0">
-                                    <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Deiveson Figueiredo</h3>
-                                    <p class="text-[10px] text-zinc-400 truncate">Brasil</p>
-                                </div>
-                            </div>
-                            <div class="col-span-1 text-center"><span class="font-oswald text-sm font-bold text-ufcRed">VS</span></div>
-                            <div class="col-span-2 flex items-center justify-end space-x-2 min-w-0 text-right">
-                                <div class="min-w-0">
-                                    <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Payton Talbott</h3>
-                                    <p class="text-[10px] text-zinc-400 truncate">EUA</p>
-                                </div>
-                                <span class="fi fi-us text-base rounded shrink-0 shadow"></span>
-                                <img src="https://raw.githubusercontent.com/jefferson2023/ufc/main/images/Payton%20Talbott.png" alt="Payton Talbott" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- King Green x Esteban Ribovics -->
-                    <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-red-600/60 shadow-lg">
-                        <div class="flex justify-between items-center text-[10px] text-zinc-300 uppercase font-medium border-b border-red-600/40 pb-2 mb-2.5">
-                            <span>Peso-Leve</span>
-                            <span>3 Rounds</span>
-                        </div>
-                        <div class="grid grid-cols-5 items-center gap-1">
-                            <div class="col-span-2 flex items-center space-x-2 min-w-0">
-                                <img src="https://raw.githubusercontent.com/jefferson2023/ufc/main/images/King%20Green.png" alt="King Green" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                                <span class="fi fi-us text-base rounded shrink-0 shadow"></span>
-                                <div class="min-w-0">
-                                    <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">King Green</h3>
-                                    <p class="text-[10px] text-zinc-400 truncate">EUA</p>
-                                </div>
-                            </div>
-                            <div class="col-span-1 text-center"><span class="font-oswald text-sm font-bold text-ufcRed">VS</span></div>
-                            <div class="col-span-2 flex items-center justify-end space-x-2 min-w-0 text-right">
-                                <div class="min-w-0">
-                                    <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Esteban Ribovics</h3>
-                                    <p class="text-[10px] text-zinc-400 truncate">Argentina</p>
-                                </div>
-                                <span class="fi fi-ar text-base rounded shrink-0 shadow"></span>
-                                <img src="https://raw.githubusercontent.com/jefferson2023/ufc/main/images/Esteban%20Ribovics.png" alt="Esteban Ribovics" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Roberto Soldić x Khaos Williams -->
-                    <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-red-600/60 shadow-lg">
-                        <div class="flex justify-between items-center text-[10px] text-zinc-300 uppercase font-medium border-b border-red-600/40 pb-2 mb-2.5">
-                            <span>Peso Meio-Médio</span>
-                            <span>3 Rounds</span>
-                        </div>
-                        <div class="grid grid-cols-5 items-center gap-1">
-                            <div class="col-span-2 flex items-center space-x-2 min-w-0">
-                                <img src="https://raw.githubusercontent.com/jefferson2023/ufc/main/images/Roberto%20Soldic.png" alt="Roberto Soldić" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                                <span class="fi fi-hr text-base rounded shrink-0 shadow"></span>
-                                <div class="min-w-0">
-                                    <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Roberto Soldić</h3>
-                                    <p class="text-[10px] text-zinc-400 truncate">Croácia</p>
-                                </div>
-                            </div>
-                            <div class="col-span-1 text-center"><span class="font-oswald text-sm font-bold text-ufcRed">VS</span></div>
-                            <div class="col-span-2 flex items-center justify-end space-x-2 min-w-0 text-right">
-                                <div class="min-w-0">
-                                    <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Khaos Williams</h3>
-                                    <p class="text-[10px] text-zinc-400 truncate">EUA</p>
-                                </div>
-                                <span class="fi fi-us text-base rounded shrink-0 shadow"></span>
-                                <img src="https://raw.githubusercontent.com/jefferson2023/ufc/main/images/Khaos%20Williams.png" alt="Khaos Williams" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Ateba Gautier x Roman Kopylov -->
-                    <div class="fight-card bg-ufcCard rounded-xl p-3.5 border border-red-600/60 shadow-lg">
-                        <div class="flex justify-between items-center text-[10px] text-zinc-300 uppercase font-medium border-b border-red-600/40 pb-2 mb-2.5">
-                            <span>Peso-Médio</span>
-                            <span>3 Rounds</span>
-                        </div>
-                        <div class="grid grid-cols-5 items-center gap-1">
-                            <div class="col-span-2 flex items-center space-x-2 min-w-0">
-                                <img src="https://raw.githubusercontent.com/jefferson2023/ufc/main/images/Ateba%20Gautier.png" alt="Ateba Gautier" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                                <span class="fi fi-cm text-base rounded shrink-0 shadow"></span>
-                                <div class="min-w-0">
-                                    <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Ateba Gautier</h3>
-                                    <p class="text-[10px] text-zinc-400 truncate">Camarões</p>
-                                </div>
-                            </div>
-                            <div class="col-span-1 text-center"><span class="font-oswald text-sm font-bold text-ufcRed">VS</span></div>
-                            <div class="col-span-2 flex items-center justify-end space-x-2 min-w-0 text-right">
-                                <div class="min-w-0">
-                                    <h3 class="font-oswald text-sm font-bold text-white uppercase leading-tight truncate">Roman Kopylov</h3>
-                                    <p class="text-[10px] text-zinc-400 truncate">Rússia</p>
-                                </div>
-                                <span class="fi fi-ru text-base rounded shrink-0 shadow"></span>
-                                <img src="https://raw.githubusercontent.com/jefferson2023/ufc/main/images/Roman%20Kopylov.png" alt="Roman Kopylov" class="w-9 h-9 rounded-full object-cover border border-zinc-700 shrink-0">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-    </main>
-
-    <!-- Rodapé -->
-    <footer class="text-center text-xs text-zinc-400 mt-10 border-t border-zinc-900 pt-4">
-        <p>UFC Event App • Desenvolvido para dispositivos móveis</p>
-    </footer>
+    </div>
 
 </body>
 </html>
